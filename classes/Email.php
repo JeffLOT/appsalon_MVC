@@ -23,12 +23,12 @@ class Email {
         // Crear el objeto de email
         $mail = new PHPMailer();
         $mail->isSMTP();
-        $mail->Host = 'smtp.mailtrap.io';
+        $mail->Host = $_ENV['DB_HOST'];
         $mail->SMTPAuth = true;
         $mail->Port = 2525;
-        $mail->Username = '5641d202f040ae';
-        $mail->Password = '5db62fcfca46b1';
-
+        $mail->Username = $_ENV['DB_USER'];
+        $mail->Password = $_ENV['DB_PASS'];
+        $mail->SMTPSecure = 'tls';
         $mail->setFrom('cuentas@appsalon.com');
         $mail->addAddress('cuentas@appsalon.com', 'AppSalon.com');
         $mail->Subject = 'Confirma tu cuenta';
@@ -50,12 +50,12 @@ class Email {
     public function enviarInstrucciones() {
         $mail = new PHPMailer();
         $mail->isSMTP();
-        $mail->Host = 'smtp.mailtrap.io';
+        $mail->Host = $_ENV['DB_HOST'];
         $mail->SMTPAuth = true;
         $mail->Port = 2525;
-        $mail->Username = '5641d202f040ae';
-        $mail->Password = '5db62fcfca46b1';
-
+        $mail->Username = $_ENV['DB_USER'];
+        $mail->Password = $_ENV['DB_PASS'];
+        $mail->SMTPSecure = 'tls';
         $mail->setFrom('cuentas@appsalon.com');
         $mail->addAddress('cuentas@appsalon.com', 'AppSalon.com');
         $mail->Subject = 'Reestablece tu password';
