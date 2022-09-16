@@ -38,7 +38,7 @@ class Email {
 
         $contenido = "<html>";
         $contenido.= "<p><strong>Hola " . $this->nombre . "</strong> Has creado una cuenta en Appsalon, solo debes confirmarla presionando el siguiente enlace</p>";
-        $contenido.= "<p>Presiona aquí: <a href='https://warm-ocean-68863.herokuapp.com/confirmar-cuenta?token=" . $this->token . "'>Confirmar cuenta</a></p>";
+        $contenido.= "<p>Presiona aquí: <a href='" . $_ENV['SERVER_HOST'] . "/confirmar-cuenta?token=" . $this->token . "'>Confirmar cuenta</a></p>";
         $contenido.= "<p>Si no solicitaste esta cuenta, puedes ignorar este mensaje</p>";
         $contenido.= "</html>";
 
@@ -65,7 +65,7 @@ class Email {
 
         $contenido = "<html>";
         $contenido.= "<p><strong>Hola " . $this->nombre . "</strong> Has solicitado reestablecer tu password, presiona el siguiente enlace para hacerlo</p>";
-        $contenido.= "<p>Presiona aquí: <a href='https://warm-ocean-68863.herokuapp.com/recuperar?token=" . $this->token . "'>Reestablece password</a></p>";
+        $contenido.= "<p>Presiona aquí: <a href='" . $_ENV['SERVER_HOST'] . "/recuperar?token=" . $this->token . "'>Reestablece password</a></p>";
         $contenido.= "<p>Si no solicitaste este cambio, puedes ignorar este mensaje</p>";
         $contenido.= "</html>";
 
