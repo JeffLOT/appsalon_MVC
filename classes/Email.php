@@ -2,9 +2,9 @@
 namespace Classes;
 
 use PHPMailer\PHPMailer\PHPMailer;
-use Dotenv\Dotenv as Dotenv;
-$dotenv = Dotenv::createImmutable('../includes/.env');
-$dotenv->safeLoad();
+// use Dotenv\Dotenv as Dotenv;
+// $dotenv = Dotenv::createImmutable('../includes/.env');
+// $dotenv->safeLoad();
 
 class Email {
 
@@ -23,11 +23,11 @@ class Email {
         // Crear el objeto de email
         $mail = new PHPMailer();
         $mail->isSMTP();
-        $mail->Host = $_ENV['DB_HOST'];
+        $mail->Host = 'smtp.mailtrap.io';
         $mail->SMTPAuth = true;
         $mail->Port = 2525;
-        $mail->Username = $_ENV['DB_USER'];
-        $mail->Password = $_ENV['DB_PASS'];
+        $mail->Username = '9ce6566965ba17';
+        $mail->Password = 'd09c94cebaf49';
         $mail->SMTPSecure = 'tls';
         $mail->setFrom('cuentas@appsalon.com');
         $mail->addAddress('cuentas@appsalon.com', 'AppSalon.com');
