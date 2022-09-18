@@ -27,18 +27,18 @@ class Email {
         $mail->SMTPAuth = true;
         $mail->Port = 2525;
         $mail->Username = '9ce6566965ba17';
-        $mail->Password = 'd09c94cebaf49';
+        $mail->Password = '7d09c94cebaf49';
         $mail->SMTPSecure = 'tls';
         $mail->setFrom('cuentas@appsalon.com');
         $mail->addAddress('cuentas@appsalon.com', 'AppSalon.com');
         $mail->Subject = 'Confirma tu cuenta';
 
-        $mail->isHTML(TRUE);
+        $mail->isHTML(true);
         $mail->CharSet = 'UTF-8';
 
         $contenido = "<html>";
         $contenido.= "<p><strong>Hola " . $this->nombre . "</strong> Has creado una cuenta en Appsalon, solo debes confirmarla presionando el siguiente enlace</p>";
-        $contenido.= "<p>Presiona aquí: <a href='" . $_ENV['SERVER_HOST'] . "confirmar-cuenta?token=" . $this->token . "'>Confirmar cuenta</a></p>";
+        $contenido.= "<p>Presiona aquí: <a href='https://warm-ocean-68863.herokuapp.com/confirmar-cuenta?token=" . $this->token . "'>Confirmar cuenta</a></p>";
         $contenido.= "<p>Si no solicitaste esta cuenta, puedes ignorar este mensaje</p>";
         $contenido.= "</html>";
 
@@ -50,22 +50,22 @@ class Email {
     public function enviarInstrucciones() {
         $mail = new PHPMailer();
         $mail->isSMTP();
-        $mail->Host = $_ENV['DB_HOST'];
+        $mail->Host = 'smtp.mailtrap.io';
         $mail->SMTPAuth = true;
         $mail->Port = 2525;
-        $mail->Username = $_ENV['DB_USER'];
-        $mail->Password = $_ENV['DB_PASS'];
+        $mail->Username = '9ce6566965ba17';
+        $mail->Password = '7d09c94cebaf49';
         $mail->SMTPSecure = 'tls';
         $mail->setFrom('cuentas@appsalon.com');
         $mail->addAddress('cuentas@appsalon.com', 'AppSalon.com');
         $mail->Subject = 'Reestablece tu password';
 
-        $mail->isHTML(TRUE);
+        $mail->isHTML(true);
         $mail->CharSet = 'UTF-8';
 
         $contenido = "<html>";
         $contenido.= "<p><strong>Hola " . $this->nombre . "</strong> Has solicitado reestablecer tu password, presiona el siguiente enlace para hacerlo</p>";
-        $contenido.= "<p>Presiona aquí: <a href='" . $_ENV['SERVER_HOST'] . "recuperar?token=" . $this->token . "'>Reestablece password</a></p>";
+        $contenido.= "<p>Presiona aquí: <a href='https://warm-ocean-68863.herokuapp.com/recuperar?token=" . $this->token . "'>Reestablece password</a></p>";
         $contenido.= "<p>Si no solicitaste este cambio, puedes ignorar este mensaje</p>";
         $contenido.= "</html>";
 
