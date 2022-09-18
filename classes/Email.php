@@ -23,7 +23,7 @@ class Email {
         // Crear el objeto de email
         $mail = new PHPMailer();
         $mail->isSMTP();
-        $mail->Host = 'https://warm-ocean-68863.herokuapp.com/';
+        $mail->Host = 'smtp.mailtrap.io';
         $mail->SMTPAuth = true;
         $mail->Port = 2525;
         $mail->Username = '9ce6566965ba17';
