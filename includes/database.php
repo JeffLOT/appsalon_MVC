@@ -1,6 +1,6 @@
 <?php
 
-$db = mysqli_connect('https://warm-ocean-68863.herokuapp.com', $_ENV['DB_USER'], $_ENV['DB_PASS'], $_ENV['DB_BD']);
+$db = mysqli_connect($_ENV['DB_HOST'], $_ENV['DB_USER'], $_ENV['DB_PASS'], $_ENV['DB_BD']);
 
 $db->set_charset('utf8');
 
